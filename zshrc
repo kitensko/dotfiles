@@ -5,6 +5,7 @@ setopt notify
 unsetopt beep
 bindkey -e
 
+export PATH=$PATH:~/Library/Python/3.5/bin
 # Zsh Completion
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -30,3 +31,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 PROMPT="%{$fg[cyan]%}%n%{$reset_color%}%% "
 PROMPT2=">>>"
 RPROMPT="%{$bg[magenta]%}[%~]%{$reset_color%}"
+
+# powerline
+powerline-daemon -q
+source /Users/kitten/Library/Python/3.5/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh

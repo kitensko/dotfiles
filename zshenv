@@ -2,7 +2,7 @@
 alias la="ls -all"
 alias ll="ls -l"
 alias vi="vim"
-alias vim="/usr/local/Cellar/vim/7.4.922/bin/vim"
+alias vim="/usr/local/bin/vim"
 alias -s py="python3"
 
 #Environment variable 
