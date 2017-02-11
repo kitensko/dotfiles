@@ -31,7 +31,8 @@ fi
 
 # -U: do not expand my alias
 # -z: use zsh style
-autoload -Uz compinit; compinit
+autoload -Uz compinit
+compinit -u
 zstyle ':completion:*:default' menu select=1
 zstyle ':completion:*' list-colors di=34 fi=0
 zstyle :compinstall filename "$HOME/.zshrc"
