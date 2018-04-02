@@ -11,7 +11,6 @@ unsetopt beep
 
 # for macOS
 if [ $(uname) = "Darwin" ]; then 
-  export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
   export LSCOLORS=gxfxcxdxbxegedabagacad
   export LS_COLORS='di=36:ln=35:so=32:pi=33:ex=31:bd=46;34:\
                     cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
@@ -29,8 +28,7 @@ else
   }
 fi
 
-# -U: do not expand my alias
-# -z: use zsh style
+# -U: do not expand my alias, -z: use zsh style
 autoload -Uz compinit
 compinit -u
 zstyle ':completion:*:default' menu select=1
@@ -44,14 +42,21 @@ zstyle ':compinstall' filename "$HOME/.zshrc"
 autoload -Uz colors; colors
 autoload -Uz run-help
 
+# Prompt
+PROMPT="%{${fg_bold[cyan]}%}%m:%{${reset_color}%} %{${fg_bold[magenta]}%}%~%{${reset_color}%}
+%{${fg_bold[red]}%}>%{${reset_color}%}%{${fg_bold[yellow]}%}>%{${reset_color}%}%{${fg_bold[green]}%}>%{${reset_color}%} "
+PROMPT2="%{${fg_bold[red]}%}>%{${reset_color}%}%{${fg_bold[yellow]}%}>%{${reset_color}%}%{${fg_bold[green]}%}>%{${reset_color}%} "
+
 # history
 setopt hist_ignore_dups
 setopt hist_ignore_space
 
-# Prompt
-PROMPT="%{$fg[cyan]%}%m%{$reset_color%}%% "
-PROMPT2="%{$fg[cyan]%}>>>%{$reset_color%} "
-RPROMPT="%{$bg[magenta]%}[%~]%{$reset_color%}"
+# Add hook
+autoload -Uz add-zsh-hook
+function precmd_func() {
+   rehash
+}
+add-zsh-hook precmd precmd_func
 
 # pyenv
 if [ -e "$HOME/.pyenv" ]; then
@@ -65,7 +70,7 @@ if [ $(uname) = "Darwin" ]; then
   export ZPLUG_HOME=/usr/local/opt/zplug
   source $ZPLUG_HOME/init.zsh
 else
-  export ZPLUG_HOME=/usr/share/zsh/scripts/zplug
+  export ZPLUG_HOME=${HOME}/.zplug
   source $ZPLUG_HOME/init.zsh
 fi
 
