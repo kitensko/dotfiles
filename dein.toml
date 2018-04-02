@@ -1,0 +1,60 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc'
+
+[[plugins]]
+repo = 'Shougo/unite.vim.git'
+
+#[[plugins]]
+#repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+if = '''has('lua')'''
+hook_add = '''
+    let g:neocomplete#enable_at_startup = 1
+'''
+
+#[[plugins]]
+#repo = 'Shougo/deoplete.nvim'
+#if = '''!has('lua')'''
+#hook_add = '''
+#    let g:deoplete#enable_at_startup = 1
+#'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+hook_add = '''
+    imap <C-k> <Plug>(neosnippet_expand_or_jump)
+    smap <C-k> <Plug>(neosnippet_expand_or_jump)
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'ujihisa/unite-colorscheme'
+
+[[plugins]]
+repo = 'Shougo/unite-outline'
+hook_add = '''
+    let g:unite_split_rule = 'botright'
+    noremap ,u <ESC>:Unite -vertical -winwidth=40 outline<Return>
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+    let g:airline_theme = 'jellybeans'
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+    let g:airline_powerline_fonts = 1
+'''
+
+[[plugins]]
+repo = 'kana/vim-smartinput'

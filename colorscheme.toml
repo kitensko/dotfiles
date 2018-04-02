@@ -1,0 +1,20 @@
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'sjl/badwolf'
+
+[[plugins]]
+repo = 'vim-scripts/twilight'
+
+[[plugins]]
+repo = 'vim-scripts/twilight'
+
+[[plugins]]
+repo = 'ciaranm/inkpot'
+
+[[plugins]]
+repo = '29decibel/codeschool-vim-theme'
+
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
