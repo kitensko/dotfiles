@@ -10,6 +10,6 @@ python3 ./fontpatcher/scripts/powerline-fontpatcher\
 
 rm -rf fontpatcher
 mkdir -p $HOME/.fonts
-mv Ricty* .fonts/
+mv Ricty* $HOME/.fonts/
 
 fc-cache -vf
